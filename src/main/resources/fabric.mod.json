@@ -28,6 +28,9 @@
     ],
     "rei_plugins": [
       "com.nhoryzon.mc.farmersdelight.integration.rei.FarmersDelightModREI"
+    ],
+    "emi": [
+      "com.nhoryzon.mc.farmersdelight.integration.emi.FarmersDelightModEMI"
     ]
   },
   "mixins": [

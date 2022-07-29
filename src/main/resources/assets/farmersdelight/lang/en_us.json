@@ -225,5 +225,10 @@
   "farmersdelight.jei.decomposition.light": "Sped up by sunlight",
   "farmersdelight.jei.decomposition.fluid": "Sped up by adjacent water",
   "farmersdelight.jei.decomposition.accelerators": "Sped up by adjacent activators (see below)",
-  "farmersdelight.jei.info.straw": "A dry plant fiber used in crafting. Obtained by cutting grassy crops and plants with a Knife."
+  "farmersdelight.jei.info.straw": "A dry plant fiber used in crafting. Obtained by cutting grassy crops and plants with a Knife.",
+
+  "emi.category.farmersdelight.cooking": "Cooking",
+  "emi.category.farmersdelight.cutting": "Cutting Board",
+  "emi.category.farmersdelight.decomposition": "Decomposition"
+
 }
