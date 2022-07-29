@@ -40,11 +40,11 @@ public class EmiCookingRecipe extends AbstractEmiFarmersRecipe {
     public void addWidgets(WidgetHolder widgets) {
         widgets.addTexture(GUI_TEXTURE, 0, 0, 116, 56, 29, 16, 118, 58, 256, 256);
         List<EmiIngredient> ingredientEntries = this.getInputs();
-        if(ingredientEntries != null)
+        if(ingredientEntries != null && !ingredientEntries.isEmpty())
         {
             for(int i = 0; i < ingredientEntries.size(); i++)
             {
-                widgets.addSlot(ingredientEntries.get(i), -1 + (i % 3 * 18), 0 + (i / 3) * 18).drawBack(false).customBackground(null, 0, 0, 19, 19);
+                widgets.addSlot(ingredientEntries.get(i), -1 + (i % 3 * 18), (i / 3) * 18);
             }
         }
         widgets.addSlot(container, 57, 33).output(true).drawBack(false);
@@ -53,7 +53,7 @@ public class EmiCookingRecipe extends AbstractEmiFarmersRecipe {
 
         widgets.addTexture(GUI_TEXTURE, 18, 39, 17, 15, 176, 0);
 
-        widgets.addFillingArrow(59, 9, this.cookTime * 20);
+        widgets.addFillingArrow(58, 9, this.cookTime * 20);
 
         widgets.addText(new LiteralText(this.cookTime + " t").asOrderedText(),60, 2, Formatting.DARK_GRAY.getColorValue(), false);
     }

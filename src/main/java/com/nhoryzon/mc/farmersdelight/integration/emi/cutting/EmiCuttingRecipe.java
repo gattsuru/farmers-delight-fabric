@@ -3,11 +3,8 @@ package com.nhoryzon.mc.farmersdelight.integration.emi.cutting;
 import com.nhoryzon.mc.farmersdelight.FarmersDelightMod;
 import com.nhoryzon.mc.farmersdelight.integration.emi.AbstractEmiFarmersRecipe;
 import com.nhoryzon.mc.farmersdelight.integration.emi.FarmersDelightModEMI;
-import com.nhoryzon.mc.farmersdelight.registry.BlocksRegistry;
-import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
-import dev.emi.emi.api.widget.SlotWidget;
 import dev.emi.emi.api.widget.WidgetHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
@@ -43,7 +40,7 @@ public class EmiCuttingRecipe extends AbstractEmiFarmersRecipe {
         //widgets.addSlot(EmiStack.of(BlocksRegistry.CUTTING_BOARD.get()), 8, 28)
         // .drawBack(false);
 
-        widgets.addGeneratedSlot((r) -> getRandomStack(r, tool), 0,9, 8).drawBack(false);
+        widgets.addGeneratedSlot((r) -> getRandomStack(r, tool), 0,9, 8).drawBack(false).catalyst(true);
 
         widgets.addGeneratedSlot((r) -> getRandomStack(r, EmiIngredient.of(this.getInputs())),0, 8, 22).drawBack(false);
 
@@ -54,7 +51,7 @@ public class EmiCuttingRecipe extends AbstractEmiFarmersRecipe {
         {
             int x = i % 2 * 19;
             int y = i / 2 * 19;
-            widgets.addSlot(outputs.get(i), x + 63, y + 5).output(true);
+            widgets.addSlot(outputs.get(i), x + 67, y + 9).recipeContext(this);
         }
     }
 }

@@ -8,16 +8,11 @@ import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.tooltip.OrderedTextTooltipComponent;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryEntryList;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class EmiDecompositionRecipe extends AbstractEmiFarmersRecipe
 {
@@ -52,7 +47,7 @@ public class EmiDecompositionRecipe extends AbstractEmiFarmersRecipe
         widgets.addTexture(GUI_TEXTURE, 0, 0, 102, 40, 7,8);
 
         widgets.addSlot(this.getInputs().get(0), 1, 17).drawBack(false);
-        widgets.addSlot(this.getOutputs().get(0), 81, 13).output(true).drawBack(false);
+        widgets.addSlot(this.getOutputs().get(0), 85, 17).drawBack(false).recipeContext(this);
 
         widgets.addGeneratedSlot((r) -> getRandomStack(r, EmiIngredient.of(modifiers)), 0, 55, 44);
 
